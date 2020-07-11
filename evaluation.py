@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
+import  nltk.translate.bleu_score as bleu
 from prep_data import *
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -51,6 +52,10 @@ def evaluateRandomly(encoder, decoder, n=10):
         output_words, attentions = evaluate(encoder, decoder, pair[0])
         output_sentence = ' '.join(output_words)
         print('<', output_sentence)
+        # Bleu
+        ref = [pair[1].split()]
+        bl = bleu.sentence_bleu(ref, output_sentence.split())
+        print("BLEU Score", bl)
         print('')
 
 

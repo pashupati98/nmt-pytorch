@@ -4,11 +4,12 @@ from torch import optim
 import torch.nn.functional as F
 from prep_data import *
 import matplotlib.pyplot as plt
-plt.switch_backend('agg')
+#plt.switch_backend('agg')
 import matplotlib.ticker as ticker
 import numpy as np
 import time
 import math
+import pickle
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -87,12 +88,17 @@ def timeSince(since, percent):
 
 
 def showPlot(points):
+    #print("function called")
     plt.figure()
     fig, ax = plt.subplots()
     # this locator puts ticks at regular intervals
     loc = ticker.MultipleLocator(base=0.2)
     ax.yaxis.set_major_locator(loc)
     plt.plot(points)
+    plt.xlabel("steps")
+    plt.ylabel("loss")
+    plt.show()
+    fig.savefig('loss.png')
 
 
 # ---------------------------------------------------------------------
@@ -130,7 +136,9 @@ def trainIters(encoder, decoder, n_iters, print_every=1000, plot_every=100, lear
             plot_losses.append(plot_loss_avg)
             plot_loss_total = 0
 
+    print(plot_losses)
     showPlot(plot_losses)
+    pickle.dump(plot_losses, open('save/gru5.pkl', 'wb'))
 
 
 

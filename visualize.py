@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-plt.switch_backend('agg')
+#plt.switch_backend('agg')
 import matplotlib.ticker as ticker
 import numpy as np
 from evaluation import *
@@ -19,7 +19,8 @@ def showAttention(input_sentence, output_words, attentions):
     # Show label at every tick
     ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
     ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
-
+    n = str(random.randint(1, 100))
+    fig.savefig("attention_{}.png".format(n))
     plt.show()
 
 
