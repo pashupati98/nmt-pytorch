@@ -138,7 +138,7 @@ def trainIters(encoder, decoder, n_iters, print_every=1000, plot_every=100, lear
 
     print(plot_losses)
     showPlot(plot_losses)
-    pickle.dump(plot_losses, open('save/gru5.pkl', 'wb'))
+    pickle.dump(plot_losses, open('save/gru1n.pkl', 'wb'))
 
 
 

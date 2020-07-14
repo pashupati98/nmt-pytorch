@@ -8,15 +8,16 @@ import random
 
 SOS_token = 0
 EOS_token = 1
+UNK_token = 2
 
 
 class Lang:
     def __init__(self, name):
         self.name = name
-        self.word2index = {}
+        self.word2index = {"SOS": 0, "EOS": 1, "UNK": 2}
         self.word2count = {}
-        self.index2word = {0: "SOS", 1: "EOS"}
-        self.n_words = 2  # Count SOS and EOS
+        self.index2word = {0: "SOS", 1: "EOS", 2: "UNK"}
+        self.n_words = 3  # Count SOS and EOS
 
     def addSentence(self, sentence):
         for word in sentence.split(' '):
@@ -73,7 +74,7 @@ def readLangs(lang1, lang2, reverse=False):
     return input_lang, output_lang, pairs
 
 
-MAX_LENGTH = 10
+MAX_LENGTH = 20
 
 eng_prefixes = (
     "i am ", "i m ",

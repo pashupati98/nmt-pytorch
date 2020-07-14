@@ -29,7 +29,7 @@ def count_parameters(model):
 
 
 def main():
-    hidden_size = 256
+    hidden_size = 1000
     print("Building Encoder...")
     encoder1 = EncoderRNN(input_lang.n_words, hidden_size, 1).to(device)
     print(encoder1)
@@ -40,7 +40,7 @@ def main():
     dparam = count_parameters(attn_decoder1)
     print("Total parameters in encoder + decoder", eparam+dparam)
     print("Starting Training...")
-    trainIters(encoder1, attn_decoder1, 750, print_every=50)
+    trainIters(encoder1, attn_decoder1, 100000, print_every=5000)
     print("Finished Training...")
     # Evaluation and Visualization
 
@@ -58,13 +58,21 @@ def main():
         encoder1, attn_decoder1, "je suis trop froid .")
     plt.matshow(attentions.numpy())
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "elle a cinq ans de moins que moi .")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "L' accord sur la zone économique européenne a été signé en août 1992 .", "sent-1")
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "elle est trop petit .")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "Il convient de noter que l' environnement marin est le moins connu de l' environnement .", "sent-2")
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "je ne crains pas de mourir .")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "La destruction de l' équipement signifie que la Syrie ne peut plus produire de nouvelles armes chimiques .", "sent-3")
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "c est un jeune directeur plein de talent .")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "' Cela va changer mon avenir avec ma famille ' , a dit l' homme .", "sent-4")
+
+    evaluateAndShowAttention(encoder1, attn_decoder1, "c est un jeune directeur plein de talent .", "sent-5")
+
+    evaluateAndShowAttention(encoder1, attn_decoder1, "elle a cinq ans de moins que moi .", "sent-6")
+
+    evaluateAndShowAttention(encoder1, attn_decoder1, "elle est trop petit .", "sent-7")
+
+    evaluateAndShowAttention(encoder1, attn_decoder1, "je ne crains pas de mourir .", "sent-8")
 
     return
 

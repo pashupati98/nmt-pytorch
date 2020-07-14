@@ -19,7 +19,7 @@ class EncoderRNN(nn.Module):
 
         # -------------------------------------------------------------------
         # self.gru = nn.GRU(embedding_dim, hidden_size)
-        self.lstm = nn.LSTM(hidden_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, layers)
 
     def forward(self, input, hidden):
         embedded = self.embedding(input).view(1, 1, -1)

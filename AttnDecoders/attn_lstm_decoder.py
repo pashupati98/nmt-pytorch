@@ -25,22 +25,23 @@ class AttnDecoderRNN(nn.Module):
 
     def forward(self, input, hidden, encoder_outputs):
         embedded = self.embedding(input).view(1, 1, -1)
-        #print("d0", embedded.shape)
         embedded = self.dropout(embedded)
-        #print("d1", embedded[0].shape)
-        #print("d2", hidden[0].shape)
 
-        #m = torch.cat((embedded, hidden[0]), 2)
-        #print("d3", m.shape)
-        #r = self.attn(m)
+        #print("d0", embedded.shape)
+        # print("d1", embedded[0].shape)
+        # print("d2----", hidden[0][0].shape)
+        #
+        # m = torch.cat((embedded[0], hidden[0][0]), 1)
+        # print("d3", m.shape)
+        # r = self.attn(m)
 
         attn_weights = F.softmax(
-            self.attn(torch.cat((embedded, hidden[0]), 2)), dim=1)
+            self.attn(torch.cat((embedded[0], hidden[0][0]), 1)), dim=1)
 
         # print("d4", attn_weights.shape)
         # print("d5", encoder_outputs.unsqueeze(0).shape)
 
-        attn_applied = torch.bmm(attn_weights,
+        attn_applied = torch.bmm(attn_weights.unsqueeze(0),
                                  encoder_outputs.unsqueeze(0))
 
         output = torch.cat((embedded[0], attn_applied[0]), 1)

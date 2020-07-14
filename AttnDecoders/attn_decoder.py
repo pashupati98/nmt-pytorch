@@ -27,12 +27,12 @@ class AttnDecoderRNN(nn.Module):
         embedded = self.embedding(input).view(1, 1, -1)
         embedded = self.dropout(embedded)
 
-        print("d0", embedded.shape)
-        print("d1", embedded[0].shape)
-        print("d2", hidden[0].shape)
-
-        m = torch.cat((embedded, hidden[0]), 1)
-        print("d3", m.shape)
+        # print("d0", embedded.shape)
+        # print("d1", embedded[0].shape)
+        # print("d2", hidden.shape)
+        #
+        # m = torch.cat((embedded[0], hidden[0]), 1)
+        # print("d3", m.shape)
 
         attn_weights = F.softmax(
             self.attn(torch.cat((embedded[0], hidden[0]), 1)), dim=1)

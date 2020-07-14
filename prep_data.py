@@ -3,6 +3,7 @@ import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 from load_data import *
+import pickle
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -10,11 +11,22 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 input_lang, output_lang, pairs = prepareData('eng', 'fra', True)
 print("Data Loaded....See Example below - ")
 print(random.choice(pairs))
-
+print("Saving Dictionary")
+pickle.dump(input_lang, open('save/input.pkl', 'wb'))
+pickle.dump(output_lang, open('save/output.pkl', 'wb'))
 
 
 def indexesFromSentence(lang, sentence):
-    return [lang.word2index[word] for word in sentence.split(' ')]
+    words = sentence.split(' ')
+    indexes = []
+    for word in words:
+        if word not in lang.word2index.keys():
+            indexes.append(lang.word2index["UNK"])
+        else:
+            indexes.append(lang.word2index[word])
+
+    return indexes
+    #return [lang.word2index[word] for word in words]
 
 
 def tensorFromSentence(lang, sentence):
