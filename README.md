@@ -30,26 +30,26 @@ Encoder-Decoder with attention mechanism
  #### Individual performance
  1 : Model with single layer of GRU
  
- Model Summary
+ Model Training process
  
- ![Model summary (for single layer GRU)](save/images/gru1.PNG)
  
- Training process
  ![training](save/images/g1.png)
  
  Evaluation (Attention Map)
+ 
  
  ![attn](save/images/attention_7.png)
  
  2 : Model with single layer of LSTM
  
- Model Summary
- ![summ](save/images/lstm1.PNG)
+ Model Training process
  
- Training process
+ 
  ![train](save/images/l1.png)
  
+ 
  Evaluation (Attention Map)
+ 
  
  ![attn](save/images/attention_58.png)
  
