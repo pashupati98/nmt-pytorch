@@ -22,6 +22,19 @@ Encoder-Decoder with attention mechanism
  - 5-layered GRU
  - 5-layered LSTM
  
+ #### How to use (For replicating or for your own experiments)
+ 
+Clone the entire repo. (It includes English to French dataset)
+```
+git clone -l -s git://github.com/pashupati98/nmt-pytorch.git cloned-repo
+cd cloned-repo
+ls
+```
+Default setting is for French to English translation with single layer LSTM based encoder-decoder architecture having attention mechanism. Run everything (Training and Evaluation) with just one command.
+```
+python main.py
+```
+
  #### Comperative performance 
  To be updated further
  
@@ -53,3 +66,4 @@ Encoder-Decoder with attention mechanism
  
  ![attn](save/images/attention_58.png)
  
+**Conclusion** - Model has learned pretty good for small sentences. It can be futher improved by training it on large corpus. 
