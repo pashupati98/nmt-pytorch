@@ -8,7 +8,7 @@ import pickle
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-input_lang, output_lang, pairs = prepareData('eng', 'fra', True)
+input_lang, output_lang, pairs = prepareData('eng', 'hin', False)
 print("Data Loaded....See Example below - ")
 print(random.choice(pairs))
 print("Saving Dictionary")

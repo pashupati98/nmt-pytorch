@@ -60,7 +60,14 @@ def readLangs(lang1, lang2, reverse=False):
         read().strip().split('\n')
 
     # Split every line into pairs and normalize
-    pairs = [[normalizeString(s) for s in l.split('\t')] for l in lines]
+    pairs = []
+    for l in lines:
+        sent = l.split('\t')
+        pair = [sent[0], sent[1]]
+        pairs.append(pair)
+
+    print("len", len(pairs))
+    # pairs = [[normalizeString(s) for s in l.split('\t')] for l in lines]
 
     # Reverse pairs, make Lang instances
     if reverse:
@@ -87,9 +94,9 @@ eng_prefixes = (
 
 
 def filterPair(p):
+    #print(p[1])
     return len(p[0].split(' ')) < MAX_LENGTH and \
-        len(p[1].split(' ')) < MAX_LENGTH and \
-        p[1].startswith(eng_prefixes)
+        len(p[1].split(' ')) < MAX_LENGTH
 
 
 def filterPairs(pairs):

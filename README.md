@@ -36,9 +36,9 @@ python main.py
 ```
 
  #### Comperative performance 
- To be updated further
+ Each model performed more or less same.
  
- ![img](save/images/comp-g1-l1.png)
+ ![img](save/images/comp.png)
  
  #### Individual performance
  1 : Model with single layer of GRU
@@ -66,4 +66,33 @@ python main.py
  
  ![attn](save/images/attention_58.png)
  
-**Conclusion** - Model has learned pretty good for small sentences. It can be futher improved by training it on large corpus. 
+ 3 : Model with three layers of GRU
+ 
+ Model Training process
+ 
+ 
+ ![train](save/images/g3.png)
+ 
+ 
+ Evaluation (Attention Map)
+ 
+ 
+ ![attn](save/images/attention_70.png)
+ 
+ 
+ 4 : Model with three layers of LSTM
+ 
+ Model Training process
+ 
+ 
+ ![train](save/images/l3.png)
+ 
+ 
+ Evaluation (Attention Map)
+ 
+ 
+ ![attn](save/images/attention_100.png)
+ 
+ 
+ 
+**Conclusion** - Models have learned pretty good for small sentences. It can be futher improved by training it on large corpus. 
