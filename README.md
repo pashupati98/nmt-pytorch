@@ -5,12 +5,13 @@ Pytorch based implementation of a seq2seq machine translation model. This implem
 
 #### Dataset Description
 
-The data for this project is a set of many thousands translation pairs from one language to another. Download the data from here (https://www.manythings.org/anki/)
+The data for this project is a set of many thousands translation pairs from one language to another. 
+Download the data from here (https://www.manythings.org/anki/)
 
 #### Hardware Configuration
 
-Training was performed on Google Colaboratory platform which provides free access to GPUs. GPU Config -
-Tesla P100-PCIE-16GB having 2496 CUDA cores and 16GB GDDR5 VRAM.
+Training was performed on Google Colaboratory platform which provides free access to GPUs. 
+GPU Config -Tesla P100-PCIE-16GB having 2496 CUDA cores and 16GB GDDR5 VRAM.
 
 #### Model Description
 
@@ -19,8 +20,8 @@ Encoder-Decoder with attention mechanism
  Model variants (architecture of both encoder and decoder)
  - Single layer GRU (23M paremeters)
  - Single layer LSTM
- - 5-layered GRU
- - 5-layered LSTM
+ - 3-layered GRU
+ - 3-layered LSTM
  
  #### How to use (For replicating or for your own experiments)
  
