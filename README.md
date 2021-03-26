@@ -27,7 +27,7 @@ Encoder-Decoder with attention mechanism
  
  #### How to use (For replicating or for your own experiments)
  
-Clone the entire repo. (It includes English to French dataset)
+Clone the entire repo. (It includes the data a well)
 ```
 git clone -l -s git://github.com/pashupati98/nmt-pytorch.git cloned-repo
 cd cloned-repo
