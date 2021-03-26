@@ -66,7 +66,7 @@ def main():
 
     evaluateAndShowAttention(encoder1, attn_decoder1, "Do you know him?", "sent-4")
 
-    
+
     return
 
 

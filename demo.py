@@ -79,15 +79,15 @@ def predict(encoder, decoder, sent):
 
 
 def run():
-    print("French to English Translator")
+    print("English to Hindi Translator")
     while True:
         sent = input("Please enter your input sentence, Enter exit to close this program \n")
         sent = str(sent)
         if sent == "exit":
             break
-        print("French Sentence : ", sent)
+        print("English Sentence : ", sent)
         ans = predict(encoder1, attn_decoder1, sent)
-        print("English Sentence : ", ans)
+        print("Hindi Sentence : ", ans)
 
 
 if __name__ == "__main__":
