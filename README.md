@@ -16,9 +16,11 @@ GPU Config -Tesla P100-PCIE-16GB having 2496 CUDA cores and 16GB GDDR5 VRAM.
 #### Model Description
 
 Encoder-Decoder with attention mechanism
+
+![arch](https://machinelearningmastery.com/wp-content/uploads/2017/10/Encoder-Decoder-Architecture-for-Neural-Machine-Translation.png)
  
  Model variants (architecture of both encoder and decoder)
- - Single layer GRU (23M paremeters)
+ - Single layer GRU 
  - Single layer LSTM
  - 3-layered GRU
  - 3-layered LSTM
@@ -52,7 +54,7 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/attention_7.png)
+ ![attn](save/images/exp2.png)
  
  2 : Model with single layer of LSTM
  
@@ -65,7 +67,7 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/attention_58.png)
+ ![attn](save/images/exp1.png)
  
  3 : Model with three layers of GRU
  
@@ -78,7 +80,7 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/attention_70.png)
+ ![attn](save/images/exp3.png)
  
  
  4 : Model with three layers of LSTM
@@ -92,7 +94,7 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/attention_100.png)
+ ![attn](save/images/exp4.png)
  
  
  
