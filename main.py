@@ -55,25 +55,18 @@ def main():
 
     print("Evaluating on a sentence...")
     output_words, attentions = evaluate(
-        encoder1, attn_decoder1, "je suis trop froid .")
+        encoder1, attn_decoder1, "He is going home")
     plt.matshow(attentions.numpy())
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "L' accord sur la zone économique européenne a été signé en août 1992 .", "sent-1")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "I can drive a car", "sent-1")
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "Il convient de noter que l' environnement marin est le moins connu de l' environnement .", "sent-2")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "She is very beautiful", "sent-2")
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "La destruction de l' équipement signifie que la Syrie ne peut plus produire de nouvelles armes chimiques .", "sent-3")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "Where are you going", "sent-3")
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "' Cela va changer mon avenir avec ma famille ' , a dit l' homme .", "sent-4")
+    evaluateAndShowAttention(encoder1, attn_decoder1, "Do you know him?", "sent-4")
 
-    evaluateAndShowAttention(encoder1, attn_decoder1, "c est un jeune directeur plein de talent .", "sent-5")
-
-    evaluateAndShowAttention(encoder1, attn_decoder1, "elle a cinq ans de moins que moi .", "sent-6")
-
-    evaluateAndShowAttention(encoder1, attn_decoder1, "elle est trop petit .", "sent-7")
-
-    evaluateAndShowAttention(encoder1, attn_decoder1, "je ne crains pas de mourir .", "sent-8")
-
+    
     return
 
 
