@@ -54,7 +54,7 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/exp2.png)
+ ![attn](save/images/exp2.PNG)
  
  2 : Model with single layer of LSTM
  
@@ -67,7 +67,7 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/exp1.png)
+ ![attn](save/images/exp1.PNG)
  
  3 : Model with three layers of GRU
  
@@ -80,7 +80,7 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/exp3.png)
+ ![attn](save/images/exp3.PNG)
  
  
  4 : Model with three layers of LSTM
@@ -94,8 +94,8 @@ python main.py
  Evaluation (Attention Map)
  
  
- ![attn](save/images/exp4.png)
+ ![attn](save/images/exp4.PNG)
  
  
  
-**Conclusion** - Models have learned pretty good for small sentences. It can be futher improved by training it on large corpus. 
+**Conclusion** - This is a very simple architecture trained a small dataset. Yet, the model has learned pretty good for small sentences. It can be futher improved by training it on large corpus. 
